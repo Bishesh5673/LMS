@@ -76,4 +76,12 @@ if (!isProd) {
     app.listen(9000, () => console.log("Server running locally on port 9000"));
 }
 
+app.get("/api/test", (req, res) => {
+    res.json({ 
+        success: true, 
+        message: "Backend is working on Vercel!",
+        time: new Date().toISOString()
+    });
+});
+
 export default app;
